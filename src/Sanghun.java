@@ -2,9 +2,9 @@
 public class Sanghun {
 
 	public static void main(String[] args) {
-		System.out.println("Å×½ºÆ®_»óÈÆ");
-		System.out.println("Å×½ºÆ®_»óÈÆ");
-		System.out.println("Å×½ºÆ®_»óÈÆ");
+		System.out.println("í…ŒìŠ¤íŠ¸_ìŠ¹í˜„");
+		System.out.println("í…ŒìŠ¤íŠ¸_ìŠ¹í˜„");
+		System.out.println("í…ŒìŠ¤íŠ¸_ìŠ¹í˜„");
 	}
 
 }
