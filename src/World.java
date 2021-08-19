@@ -13,6 +13,7 @@ public class World {
 		//수정5
 		
 		//수정6
+		//수정 7
 
 	}
 
