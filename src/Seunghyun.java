@@ -5,6 +5,9 @@ public class Seunghyun {
 		System.out.println("Å×½ºÆ®_½ÂÇö");
 		System.out.println("Å×½ºÆ®_½ÂÇö");
 		System.out.println("Å×½ºÆ®_½ÂÇö");
+		System.out.println("Å×½ºÆ®_½ÂÇö");
+		System.out.println("Å×½ºÆ®_½ÂÇö");
+		System.out.println("Å×½ºÆ®_½ÂÇö");
 	}
 
 }
