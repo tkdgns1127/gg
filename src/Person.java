@@ -1,6 +1,7 @@
 
 public class Person {
 
+	String asd = "도현도 테스트";
 	String name;
 	int age;
 
