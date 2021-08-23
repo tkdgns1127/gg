@@ -1,6 +1,7 @@
 
 public class Person {
 
+	String asd = "도현도 테스트";
 	String name;
 	int age;
 
@@ -82,6 +83,7 @@ public class Person {
 	public void setCure_count(int cure_count) {
 		this.cure_count = cure_count;
 	}
+	
 	
 	
 	
