@@ -14,6 +14,8 @@ public class World {
 		
 		//수정6
 		//수정 7
+		
+		//수정 8
 
 	}
 
