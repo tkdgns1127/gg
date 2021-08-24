@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Test {
 	
 	//검사 대상자 리스트 - > arr, Person 객체로부터 받는 핸폰 번호 -> phoneNumber 로 가정하고 작성했습니다. 
+	ArrayList<Person> arr = new ArrayList<>();
+	
 	
 	String getName;
 	String getPhoneNumber;
@@ -31,7 +33,7 @@ public class Test {
 			
 			if(getName == person.name) {
 				
-				if(person.phoneNumber.contain(getPhoneNumber)) {
+				if(person.phoneNum.contains(getPhoneNumber)) {
 					randomTest();
 				} else {
 					System.out.println("예약자 중에 일치하는 사람이 없습니다. 상담을 먼저 받고 오세요.");
@@ -57,7 +59,7 @@ public class Test {
 					ArrayList<Person> infectionPersonList = new ArrayList<>();
 					
 					infectionPersonList.add(arr.get(i));
-				}		
+				}	
 			}
 		}
 	}
