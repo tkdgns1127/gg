@@ -6,6 +6,7 @@ public class Cure {
 		ArrayList<Person> antibodyList = new ArrayList<>();
 		ArrayList<Person> deathList = new ArrayList<>();
 		
+		
 	public void cureMethod(Scanner scanner){
 		System.out.println("예약한 병원을 입력하세요.");
 		String hospital = scanner.nextLine();

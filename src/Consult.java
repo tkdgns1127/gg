@@ -46,7 +46,7 @@ public class Consult {
 						yesCount = yesCount + 1;
 					}
 				}
-				
+			
 				
 				//[5개 질문중 yes가 3개 이상일 경우 -> 검사자 리스트에 추가]
 				if(yesCount>=3) {

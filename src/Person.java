@@ -15,7 +15,7 @@ public class Person {
 	String vaccine;					// 백신(모더나, 화이자)
 	int cure_count;					// 치료 횟수
 	
-	
+
 	Person(String name, int age,String phoneNum){
 		this.name = name;
 		this.age = age;
