@@ -1,3 +1,4 @@
+package corona;
 
 public class Person {
 	

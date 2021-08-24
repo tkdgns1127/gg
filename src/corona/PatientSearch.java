@@ -1,5 +1,6 @@
 package corona;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PatientSearch {
@@ -13,7 +14,6 @@ public class PatientSearch {
 	
 	void search() {
 		String searchname = null;
-		
 		System.out.print("이름을 입력하세요. : ");
 		searchname = scanner.nextLine();
 		
