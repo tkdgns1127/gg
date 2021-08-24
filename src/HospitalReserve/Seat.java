@@ -7,7 +7,7 @@ class reserveseat{
 	
 		//현재 오류 - 타입 
 		//수정해야 할 부분 - 날짜 / 리스트
-		//다시
+		//다시2차
 	
 		
 		String reserveName; // 예약자 성명
