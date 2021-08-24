@@ -3,7 +3,10 @@ public class Person {
 
 	String name;
 	int age;
-
+	String phoneNum;
+	
+	
+	
 	boolean check = false;			// 검사대상 여부
 	boolean confirmed = false;		// 확진 여부
 	boolean cure = false;			// 완치 여부
@@ -13,9 +16,10 @@ public class Person {
 	int cure_count;					// 치료 횟수
 	
 	
-	Person(String name, int age){
+	Person(String name, int age,String phoneNum){
 		this.name = name;
 		this.age = age;
+		this.phoneNum = phoneNum;
 	}
 	
 	
@@ -34,6 +38,16 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	public String getPhoneNum() {
+		return phoneNum;
+	}
+	
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+	}
+	
+	
 	
 	public boolean isCheck() {
 		return check;
@@ -79,8 +93,8 @@ public class Person {
 		return cure_count;
 	}
 	
-	public void setCure_count(int cure_count) {
-		this.cure_count = cure_count;
+	public void setCure_count() {
+		cure_count = cure_count+1;
 	}
 	
 	
