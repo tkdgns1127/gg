@@ -32,7 +32,6 @@ public class Test {
 		Scanner scanner = new Scanner(System.in);
 		boolean checkReservation = false;
 	
-	
 		while (!checkReservation) {
 			System.out.println("이름을 입력해주세요.");
 			inputName = scanner.nextLine();
