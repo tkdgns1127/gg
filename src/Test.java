@@ -2,69 +2,133 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+
+	//Testë¥¼ ìœ„í•œ arr ìƒì„±
+//class A {
+//	
+//	
+//	public static void main(String[] args) {
+//		
+//		ArrayList<Person> arr = new ArrayList<Person>();
+//			
+//			arr.add(new Person("ì„í˜„ê²½", "01055552222"));
+//			arr.add(new Person("í™ê¸¸ë™", "01022223333"));
+//			arr.add(new Person("ê¹€ê¹€ê¹€", "01022224444"));
+//			
+//			Test test = new Test();
+//				
+//			test.inputInformation(arr);
+//	}
+//} 
+
 public class Test {
 	
-	//°Ë»ç ´ë»óÀÚ ¸®½ºÆ® - > arr, Person °´Ã¼·ÎºÎÅÍ ¹Ş´Â ÇÚÆù ¹øÈ£ -> phoneNumber ·Î °¡Á¤ÇÏ°í ÀÛ¼ºÇß½À´Ï´Ù. 
-	ArrayList<Person> arr = new ArrayList<>();
+// Type 1 - ê²€ì‚¬ í›„ ì¢…ë£Œ
+	String inputName;
+	String inputPhoneNumber;
+	static ArrayList<Person> infectionList = new ArrayList<>();
 	
-	
-	String getName;
-	String getPhoneNumber;
-	Person Person;
-
-	void inputInformation() {
+	void inputInformation(ArrayList<Person> arr) {
 		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-		getName = scanner.nextLine();
-		
-		System.out.println("ÀüÈ­¹øÈ£ µŞÀÚ¸®¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-		getPhoneNumber = scanner.nextLine();
+		boolean checkReservation = false;
 	
-		scanner.close();
-		
-		iformationCheck();
-	}
 	
-	/*inputInformation()
-	iformationCheck()
-	randomTest()
-	*/
-	void iformationCheck() {
-		
-		for(Person person: arr) {
+		while (!checkReservation) {
+			System.out.println("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+			inputName = scanner.nextLine();
 			
-			if(getName == person.name) {
+			System.out.println("ì „í™”ë²ˆí˜¸ ë’·ìë¦¬ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+			inputPhoneNumber = scanner.nextLine();
+			
+			// ì˜ˆì•½ì ë¦¬ìŠ¤íŠ¸ì™€ ì…ë ¥ê°’ì„ ë¹„êµ
+			boolean correct = false; 
+			Person reservedPerson = null;
+			
+			for(Person person: arr) {
 				
-				if(person.phoneNum.contains(getPhoneNumber)) {
-					randomTest();
-				} else {
-					System.out.println("¿¹¾àÀÚ Áß¿¡ ÀÏÄ¡ÇÏ´Â »ç¶÷ÀÌ ¾ø½À´Ï´Ù. »ó´ãÀ» ¸ÕÀú ¹Ş°í ¿À¼¼¿ä.");
-				}
+				String fullNum = person.phoneNum;
+				String lastNum = fullNum.substring(7);
 				
-			} else {
-				System.out.println("ÀüÈ­¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù. ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä.");
-				inputInformation();
-			}	
-		}
-	}
-	
-	void randomTest() {
-		
-			for(int i = 0; i < arr.size(); i++) {
-				
-				Random random = new Random();
-				
-				arr.get(i).confirmed = (random.nextInt(2)!= 0);
-				
-				if(arr.get(i).confirmed) {
-					
-					ArrayList<Person> infectionPersonList = new ArrayList<>();	//È®ÁøÀÚ ¸®½ºÆ®
-					
-					infectionPersonList.add(arr.get(i));
+				if(inputName.equals(person.name) && lastNum.equals(inputPhoneNumber)) { 
+					correct = true;
+					reservedPerson = person;
+					break;
 				}	
 			}
-		}
+			
+			if(correct) {
+				checkReservation = true;
+				randomTest(reservedPerson);
+			} else {
+				System.out.println("ì¼ì¹˜í•˜ëŠ” ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
+			}
+		} ;
+		
+		scanner.close();
 	}
+	
+	ArrayList<Person> randomTest(Person person) {
+		
+		System.out.println("Corona19 ê²€ì‚¬ë¥¼ ì‹œì‘í•©ë‹ˆë‹¤.");
 
+		Random random = new Random();
+		person.confirmed = (random.nextInt(2)!= 0);
+		
+		if(person.confirmed) {
+			infectionList.add(person);
+			System.out.println("Corona19 ê²€ì‚¬ ê²°ê³¼ [ì–‘ì„±] ì…ë‹ˆë‹¤.");
+		} else {
+			System.out.println("Corona19 ê²€ì‚¬ ê²°ê³¼ [ìŒì„±] ì…ë‹ˆë‹¤.");
+		}
+		
+		// infectionList ì¶œë ¥ (name) - í™•ì¸ìš©
+		for (Person p : infectionList) {
+			System.out.println("infectionList: " + p.getName());
+		}
+		
+		return infectionList;
+	}
+}
 
+	
+//Type 1 - ê²€ì‚¬ í›„ì—ë„ ì´ë¦„/ë²ˆí˜¸ ë¬´í•œ ë°˜ë³µ
+
+//	public void inputInformation(ArrayList<Person> arr) { 
+//		Scanner scanner = new Scanner(System.in);
+//		boolean checkReservation = false;
+//		
+//		while (!checkReservation) {
+//			System.out.println("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+//			inputName = scanner.nextLine();
+//			
+//			System.out.println("ì „í™”ë²ˆí˜¸ ë’·ìë¦¬ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+//			inputPhoneNumber = scanner.nextLine();
+//					
+//			for(Person person: arr) {
+//				
+//				String fullNum = person.phoneNum;
+//				String lastNum = fullNum.substring(7);
+//				
+//				if(inputName.equals(person.name) && lastNum.equals(inputPhoneNumber)) {
+//					
+//					System.out.println("Corona19 ê²€ì‚¬ë¥¼ ì‹œì‘í•©ë‹ˆë‹¤.");
+//					
+//					Random random = new Random();
+//					
+//					person.confirmed = (random.nextInt(2)!= 0);
+//					
+//					if(person.confirmed) {
+//						infectionList.add(person);
+//						System.out.println("Corona19 ê²€ì‚¬ ê²°ê³¼ [ì–‘ì„±] ì…ë‹ˆë‹¤."); 
+//						// infectionList ì¶œë ¥
+//						for (Person p : infectionList) {
+//							System.out.println("ê°ì—¼ì ì´ë¦„: " + p.getName());
+//						}
+//					} else  {
+//						System.out.println("Corona19 ê²€ì‚¬ ê²°ê³¼ [ìŒì„±] ì…ë‹ˆë‹¤.");
+//					} 
+//				} 
+//			} 
+//		}
+//	}
+//}	
