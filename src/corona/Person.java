@@ -2,22 +2,26 @@ package corona;
 
 public class Person {
 	
-	String name;
-	int age;
+	private String name;
+	private int age;
+	private String phonenum;
+	private String gender;
 
-	boolean check = false;			// °Ë»ç´ë»ó ¿©ºÎ
-	boolean confirmed = false;		// È®Áø ¿©ºÎ
-	boolean cure = false;			// ¿ÏÄ¡ ¿©ºÎ
+//	boolean check = false;			// ê²€ì‚¬ëŒ€ìƒ ì—¬ë¶€
+//	boolean confirmed = false;		// í™•ì§„ ì—¬ë¶€
+//	boolean cure = false;			// ì™„ì¹˜ ì—¬ë¶€
 
-	int month; 						// È®Áø ¿ù
-	String vaccine;					// ¹é½Å(¸ğ´õ³ª, È­ÀÌÀÚ)
-	int cure_count;					// Ä¡·á È½¼ö
+//	int month; 						// í™•ì§„ ì›”
+//	String vaccine;					// ë°±ì‹ (ëª¨ë”ë‚˜, í™”ì´ì)
+//	int cure_count;					// ì¹˜ë£Œ íšŸìˆ˜
 	
 	
-	Person(String name, int age){
-		this.name = name;
-		this.age = age;
-	}
+//	Person(String name, int age, String phonenum, String gender){
+//		this.name = name;
+//		this.age = age;
+//		this.phonenum = phonenum;
+//		this.gender = gender;
+//	}
 	
 	
 	public String getName() {
@@ -35,54 +39,74 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
-	public boolean isCheck() {
-		return check;
+
+
+	public String getPhonenum() {
+		return phonenum;
+	}
+
+
+	public void setPhonenum(String phonenum) {
+		this.phonenum = phonenum;
+	}
+
+
+	public String getGender() {
+		return gender;
+	}
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	
-	public void setCheck(boolean check) {
-		this.check = check;
-	}
-	
-	public boolean isConfirmed() {
-		return confirmed;
-	}
-	
-	public void setConfirmed(boolean confirmed) {
-		this.confirmed = confirmed;
-	}
-	
-	public boolean isCure() {
-		return cure;
-	}
-	
-	public void setCure(boolean cure) {
-		this.cure = cure;
-	}
-	
-	public int getMonth() {
-		return month;
-	}
-	
-	public void setMonth(int month) {
-		this.month = month;
-	}
-	
-	public String getVaccine() {
-		return vaccine;
-	}
-	
-	public void setVaccine(String vaccine) {
-		this.vaccine = vaccine;
-	}
-	
-	public int getCure_count() {
-		return cure_count;
-	}
-	
-	public void setCure_count(int cure_count) {
-		this.cure_count = cure_count;
-	}
+//	public boolean isCheck() {
+//		return check;
+//	}
+//	
+//	public void setCheck(boolean check) {
+//		this.check = check;
+//	}
+//	
+//	public boolean isConfirmed() {
+//		return confirmed;
+//	}
+//	
+//	public void setConfirmed(boolean confirmed) {
+//		this.confirmed = confirmed;
+//	}
+//	
+//	public boolean isCure() {
+//		return cure;
+//	}
+//	
+//	public void setCure(boolean cure) {
+//		this.cure = cure;
+//	}
+//	
+//	public int getMonth() {
+//		return month;
+//	}
+//	
+//	public void setMonth(int month) {
+//		this.month = month;
+//	}
+//	
+//	public String getVaccine() {
+//		return vaccine;
+//	}
+//	
+//	public void setVaccine(String vaccine) {
+//		this.vaccine = vaccine;
+//	}
+//	
+//	public int getCure_count() {
+//		return cure_count;
+//	}
+//	
+//	public void setCure_count(int cure_count) {
+//		this.cure_count = cure_count;
+//	}
 	
 	
 	
