@@ -1,5 +1,6 @@
 
 
+
 public class Person {
 
 	String name;
@@ -11,7 +12,7 @@ public class Person {
 
 	int month; 						// 확진 월
 	String vaccine;					// 백신(모더나, 화이자)
-	int cure_count;					// 치료 횟수
+	int cure_count = 0;					// 치료 횟수
 	String phoneNum;
 	
 	
@@ -96,8 +97,8 @@ public class Person {
 		return cure_count;
 	}
 	
-	public void setCure_count(int cure_count) {
-		this.cure_count = cure_count;
+	public void setCure_countUp() {
+		cure_count = cure_count + 1;
 	}
 
 
