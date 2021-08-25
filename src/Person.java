@@ -2,6 +2,7 @@
 public class Person {
 
 	String name;
+	String phoneNum;
 	int age;
 
 	boolean check = false;			// 검사대상 여부
@@ -16,6 +17,11 @@ public class Person {
 	Person(String name, int age){
 		this.name = name;
 		this.age = age;
+	}
+	
+	Person(String name, String phoneNum){
+		this.name = name;
+		this.phoneNum = phoneNum;
 	}
 	
 	

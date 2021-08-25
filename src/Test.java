@@ -2,52 +2,36 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+class A {
+	
+	
+	public static void main(String[] args) {
+		
+		ArrayList<Person> arr = new ArrayList<Person>();
+			
+			arr.add(new Person("임현경", "01055552222"));
+			arr.add(new Person("홍길동", "01022223333"));
+			arr.add(new Person("김김김", "01022224444"));
+			
+			Test test = new Test();
+				
+			test.inputInformation(arr);
+	}
+}
+
 public class Test {
 	
-	//검사 대상자 리스트 - > arr, Person 객체로부터 받는 핸폰 번호 -> phoneNumber 로 가정하고 작성했습니다. 
-	
+// Type 1 - 검사 후 종료
 	String inputName;
 	String inputPhoneNumber;
+	static ArrayList<Person> infectionList = new ArrayList<>();
 	
-//	void inputInformation(ArrayList<Person> arr) {
-//		Scanner scanner = new Scanner(System.in);
-//		
-//		System.out.println("이름을 입력해주세요.");
-//		inputName = scanner.nextLine();
-//		
-//		System.out.println("전화번호 뒷자리를 입력해주세요.");
-//		inputPhoneNumber = scanner.nextLine();
-//	
-//		scanner.close();
-//		
-//		informationCheck(arr);
-//	}
-//	
-//	
-//	void informationCheck(ArrayList<Person> arr) {
-//		
-//		for(Person person: arr) {
-//			
-//			if(inputName.equals(person.name)) {
-//				
-//				if(person.phoneNumber.contains(inputPhoneNumber)) {
-//					randomTest();
-//				} else {
-//					System.out.println("예약자 중에 일치하는 사람이 없습니다. 상담을 먼저 받고 오세요.");
-//				}
-//				
-//			} else {
-//				System.out.println("전화번호가 일치하지 않습니다. 다시 확인해주세요.");
-//				inputInformation();
-//			}	
-//		}
-//	}
-	
-	void inputInformation(ArrayList<Person> arr) { // 예약자 리스트를 매개변수로 받는다.
+	void inputInformation(ArrayList<Person> arr) {
 		Scanner scanner = new Scanner(System.in);
 		boolean checkReservation = false;
-		
-		do {
+	
+	
+		while (!checkReservation) {
 			System.out.println("이름을 입력해주세요.");
 			inputName = scanner.nextLine();
 			
@@ -56,42 +40,93 @@ public class Test {
 			
 			// 예약자 리스트와 입력값을 비교
 			boolean correct = false; 
+			Person reservedPerson = null;
 			
 			for(Person person: arr) {
 				
-				String fullNum = person.phoneNumber;
+				String fullNum = person.phoneNum;
 				String lastNum = fullNum.substring(7);
 				
 				if(inputName.equals(person.name) && lastNum.equals(inputPhoneNumber)) {
 					correct = true;
+					reservedPerson = person;
 					break;
 				}	
 			}
 			
 			if(correct) {
 				checkReservation = true;
-				randomTest(arr);
+				randomTest(reservedPerson);
 			} else {
-				System.out.println("일치하는 정보가 없습니다. 다시 확인해주세요.");
+				System.out.println("일치하는 정보가 없습니다.");
 			}
-		} while (!checkReservation);
+		} ;
 		
 		scanner.close();
 	}
 	
-	ArrayList<Person> randomTest(ArrayList<Person> arr) {
-		ArrayList<Person> infectionPersonList = new ArrayList<>();
+	ArrayList<Person> randomTest(Person person) {
 		
-		for(int i = 0; i < arr.size(); i++) {
-			Random random = new Random();
-			
-			arr.get(i).confirmed = (random.nextInt(2)!= 0);
-			
-			if(arr.get(i).confirmed) {
-				infectionPersonList.add(arr.get(i));
-			}		
+		System.out.println("Corona19 검사를 시작합니다.");
+
+		Random random = new Random();
+		person.confirmed = (random.nextInt(2)!= 0);
+		
+		if(person.confirmed) {
+			infectionList.add(person);
+			System.out.println("Corona19 검사 결과 [양성] 입니다.");
+		} else {
+			System.out.println("Corona19 검사 결과 [음성] 입니다.");
 		}
 		
-		return infectionPersonList;
+		// infectionList 출력 (name) - 확인용
+		for (Person p : infectionList) {
+			System.out.println("infectionList: " + p.getName());
+		}
+		
+		return infectionList;
 	}
 }
+
+	
+//Type 1 - 검사 후에도 이름/번호 무한 반복
+
+//	public void inputInformation(ArrayList<Person> arr) { 
+//		Scanner scanner = new Scanner(System.in);
+//		boolean checkReservation = false;
+//		
+//		while (!checkReservation) {
+//			System.out.println("이름을 입력해주세요.");
+//			inputName = scanner.nextLine();
+//			
+//			System.out.println("전화번호 뒷자리를 입력해주세요.");
+//			inputPhoneNumber = scanner.nextLine();
+//					
+//			for(Person person: arr) {
+//				
+//				String fullNum = person.phoneNum;
+//				String lastNum = fullNum.substring(7);
+//				
+//				if(inputName.equals(person.name) && lastNum.equals(inputPhoneNumber)) {
+//					
+//					System.out.println("Corona19 검사를 시작합니다.");
+//					
+//					Random random = new Random();
+//					
+//					person.confirmed = (random.nextInt(2)!= 0);
+//					
+//					if(person.confirmed) {
+//						infectionList.add(person);
+//						System.out.println("Corona19 검사 결과 [양성] 입니다."); 
+//						// infectionList 출력
+//						for (Person p : infectionList) {
+//							System.out.println("감염자 이름: " + p.getName());
+//						}
+//					} else  {
+//						System.out.println("Corona19 검사 결과 [음성] 입니다.");
+//					} 
+//				} 
+//			} 
+//		}
+//	}
+//}			
