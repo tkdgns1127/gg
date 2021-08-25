@@ -35,7 +35,7 @@ public class Cure {
 				 		백신을 선택하면서 해당병원의 백신 개수차감.?
 					 */
 					//치료횟수 증가
-					person.setCure_count();
+					person.setCure_count(0);
 					//어떤 백신을 맞았는지 저장
 					person.setVaccine("모더나");
 					
@@ -44,7 +44,7 @@ public class Cure {
 			 		백신을 선택하면서 해당병원의 백신 개수차감.?
 					 */
 					//치료횟수 증가
-					person.setCure_count();
+					person.setCure_count(0);
 					//어떤 백신을 맞았는지 저장
 					person.setVaccine("화이자");
 				
