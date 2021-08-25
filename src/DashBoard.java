@@ -23,7 +23,7 @@ public class DashBoard {
 		System.out.println("누적 완치자 수 : " + "명"); //치료자 리스트
 		System.out.println("누적 사망자 수 : " + "명"); //사망자 리스트
 		System.out.println("백신 접종자 수 : " + "명"); //치료자 리스트 + 항체생성 리스트 + 사망자 리스트
-		System.out.println("----------------");
+		System.out.println("------------------");
 		System.out.println();
 //		System.out.println("재확진자 수 : " + "명");   //백신치료여부가 참인사람(Boolean Cure = true)인 사람이 확진자 리스트로 들어가
 	}
