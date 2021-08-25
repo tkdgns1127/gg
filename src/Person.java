@@ -1,8 +1,8 @@
 
-
 public class Person {
 
 	String name;
+	String phoneNum;
 	int age;
 
 	boolean check = false;			// 검사대상 여부
@@ -12,10 +12,7 @@ public class Person {
 	int month; 						// 확진 월
 	String vaccine;					// 백신(모더나, 화이자)
 	int cure_count;					// 치료 횟수
-	String phoneNum;
 	
-	
-
 	public String getPhoneNum() {
 		return phoneNum;
 	}
@@ -33,6 +30,11 @@ public class Person {
 	Person(String name, int age){
 		this.name = name;
 		this.age = age;
+	}
+	
+	Person(String name, String phoneNum){
+		this.name = name;
+		this.phoneNum = phoneNum;
 	}
 	
 	
