@@ -1,4 +1,4 @@
-package corona;
+
 
 import java.util.Scanner;
 
@@ -16,8 +16,10 @@ public class MainSearch {
 		
 		if(result == 1) {
 			DashBoard dashBoard = new DashBoard();
+			start();
 		}else if(result == 2) {
 			PatientSearch patientsearch = new PatientSearch();
+			
 		}else if(result == 3) {
 			//나이별 클래스 객체 생성
 		}else if(result == 4) {
