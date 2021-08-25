@@ -17,6 +17,7 @@ public class Cure {
 		
 		 
 		//[이름과 뒷번호가 해당 병원(서울대병원) 예약리스트에 있음]
+		//해당병원리스트에서 비교해야함
 		ArrayList<Person> reserveList = new ArrayList<>();
 		for (Person person : reserveList) {
 			if(person.getName().equals(name) && person.getPhoneNum().substring(9).equals(phoneNum4)) {
