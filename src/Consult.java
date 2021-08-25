@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Consult {
-	
+		ArrayList<Person> coronaTestList = new ArrayList<>();
+		
 	public void conusltMethod(Scanner scanner) {
 		//Person정보 입력
 				System.out.println("이름을 입력하세요.");
@@ -50,9 +51,8 @@ public class Consult {
 				
 				//[5개 질문중 yes가 3개 이상일 경우 -> 검사자 리스트에 추가]
 				if(yesCount>=3) {
-					/*
-					 코로나검사자리스트에 추가
-					 */
+					 //코로나검사자리스트에 추가 
+					coronaTestList.add(person);
 					person.setCheck(true);
 					System.out.println("검사하세요.");
 				}else {
